@@ -1,6 +1,6 @@
 from selenium import webdriver
 from fixture.session import SessionHelper
-from fixture.projects import ProjectHelper
+from fixture.project import ProjectHelper
 
 
 class Application:

@@ -3,29 +3,21 @@ from fixture.session import SessionHelper
 from fixture.project import ProjectHelper
 
 
-class Application:
 
+class Application:
     def __init__(self, browser, base_url):
-        if browser=="firefox":
+        if browser == "firefox":
             self.wd = webdriver.Firefox()
-        elif browser=="chrome":
+        elif browser == "chrome":
             self.wd = webdriver.Chrome()
-        elif browser=="ie":
+        elif browser == "ie":
             self.wd = webdriver.Ie()
         else:
-            raise ValueError("Unknown browser %s" % browser)
-        self.wd.implicitly_wait(5)
+            raise ValueError("Unrecognised browser %s" % browser)
+        self.wd.implicitly_wait(1)    # дополнительное ожидание появления элементов
         self.session = SessionHelper(self)
         self.projects = ProjectHelper(self)
-        self.base_url=base_url
-
-    def open_home_page(self):
-        wd = self.wd
-        if not (wd.current_url.endswith("http://localhost/mantisbt-1.2.20/login_page.php")):
-            wd.get(self.base_url)
-
-    def destroy(self):
-        self.wd.quit()
+        self.base_url = base_url
 
     def is_valid(self):
         try:
@@ -33,3 +25,14 @@ class Application:
             return True
         except:
             return False
+
+    def return_home_page(self):
+        wd = self.wd
+        wd.find_element_by_link_text("home page").click()
+
+    def open_home_page(self):
+        wd = self.wd
+        wd.get(self.base_url)
+
+    def destroy(self):
+        self.wd.quit()

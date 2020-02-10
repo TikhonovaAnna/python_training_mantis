@@ -1,14 +1,9 @@
 {
-    "web": {
-        "base_url": "http://localhost/mantisbt-1.2.20/login_page.php"
-    },
-    "webadmin": {
-        "username": "administrator",
-        "password": "root"
-    },
-    "ftp": {
-        "host": "localhost",
-        "username": "mantis",
-        "password": "mantis"
-
-    },
+  "web": {
+    "baseUrl": "http://localhost/mantisbt-1.2.20"
+  },
+  "webadmin": {
+    "username": "adminstrator",
+    "password": "root"
+  }
+}

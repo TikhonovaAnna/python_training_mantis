@@ -5,7 +5,6 @@ from fixture.application import Application
 import ftputil
 
 
-
 fixture = None
 target = None
 
@@ -65,6 +64,7 @@ def stop(request):
         fixture.destroy()
     request.addfinalizer(fin)
     return fixture
+
 
 def pytest_addoption(parser):
     parser.addoption("--browser", action="store", default="firefox")

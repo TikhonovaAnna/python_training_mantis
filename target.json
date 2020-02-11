@@ -1,14 +1,20 @@
 {
   "web": {
-    "baseUrl": "http://localhost/mantisbt-1.2.20"
+    "base_url": "http://localhost/mantisbt-1.2.20"
   },
   "webadmin": {
     "username": "adminstrator",
     "password": "root"
   },
-    "ftp": {
-        "host": "localhost",
-        "username": "mantis",
-        "password": "mantis"
-    }
+  "ftp": {
+    "host": "localhost",
+    "username": "mantis",
+    "password": "mantis"
+  },
+  "james": {
+    "host": "localhost",
+    "port": 4555,
+    "username": "root",
+    "password": "root"
+  }
 }

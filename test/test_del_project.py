@@ -5,7 +5,7 @@ import time
 
 
 def test_del_project(app):
-    # app.session.login("administrator", "root")
+    app.session.login("administrator", "root")
     if len(app.soap.get_projects_list("administrator", "root"))==0:
         project = Project(name=("Project " + str(datetime.now().strftime("%m_%d %H:%M:%S"))),
                              description="Description")

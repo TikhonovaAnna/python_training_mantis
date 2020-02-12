@@ -8,6 +8,7 @@ def random_username(prefix, maxlen):
 
 
 def test_signup_new_account(app):
+    app.session.logout()
     username = random_username("user_", 10)
     email = username + "@localhost"
     password = "test"
@@ -17,4 +18,3 @@ def test_signup_new_account(app):
     # assert app.soap.can_login(username, password)
     app.session.login(username, password)
     assert app.session.is_logged_in_as(username)
-    app.session.logout()

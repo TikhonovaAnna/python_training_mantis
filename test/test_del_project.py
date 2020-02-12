@@ -5,7 +5,6 @@ import time
 
 
 def test_del_project(app):
-    app.session.login("administrator", "root")
     if len(app.soap.get_projects_list("administrator", "root"))==0:
         project = Project(name=("Project " + str(datetime.now().strftime("%m_%d %H:%M:%S"))),
                              description="Description")
@@ -22,4 +21,7 @@ def test_del_project(app):
     # old_projects.remove(project)
     # #assert sorted(old_projects) == sorted(new_projects)
     old_projects.remove(project)
-    assert sorted(old_projects, key=Project.id_or_max) == sorted(new_projects, key=Project.id_or_max)
+    # assert sorted(old_projects, key=Project.id_or_max) == sorted(new_projects, key=Project.id_or_max)
+    for op, np in zip(old_projects, new_projects):
+        assert op.id == np.id
+        assert op.name == np.name

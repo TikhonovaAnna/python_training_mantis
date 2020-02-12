@@ -4,7 +4,7 @@ from datetime import datetime
 
 
 def test_add_project(app):
-    app.session.login("administrator", "root")
+    # app.session.login("administrator", "root")
     old_projects = app.soap.get_projects_list("administrator", "root")
     # old_projects= app.projects.get_project_list()
     # project = Project(name="new project664u33", description="test6s9wfr")

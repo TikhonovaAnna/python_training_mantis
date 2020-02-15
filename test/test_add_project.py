@@ -21,5 +21,4 @@ def test_add_project(app):
 
     print(old_projects)
     print(new_projects)
-
     #assert sorted(old_projects, key=old_projects[0]) == sorted(new_projects, key=new_projects[0])

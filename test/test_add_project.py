@@ -14,12 +14,12 @@ def test_add_project(app):
     # new_projects= app.projects.get_project_list()
     new_projects = app.soap.get_projects_list("administrator", "root")
     assert len(old_projects) + 1 == len(new_projects)
-    # old_projects.append(project)
-    # #assert sorted(old_projects) == sorted(new_projects)
     old_projects.append(project)
+    #assert sorted(old_projects) == sorted(new_projects)
+    #old_projects.append(project)
     #assert sorted(old_projects, key=Project.id_or_max) == sorted(new_projects, key=Project.id_or_max)
 
     print(old_projects)
     print(new_projects)
 
-    # assert sorted(old_projects, key=old_projects[0]) == sorted(new_projects, key=new_projects[0])
+    #assert sorted(old_projects, key=old_projects[0]) == sorted(new_projects, key=new_projects[0])

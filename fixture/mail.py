@@ -13,7 +13,7 @@ class MailHelper:
 
     def get_mail(self, username, password, subject):
         # так как почта приходим не сразу, делаем несколько попыток прочитать сообщение
-        for i in range(20):
+        for i in range(30):
             # адрес сервера
             pop = poplib.POP3(self.app.config['james']['host'])
             # Имя и пароль пользователя, с которым нужно открыть сессию
